@@ -90,3 +90,27 @@ prometheus-client
 Contributions and extensions (e.g., GCP modules, CI/CD workflows) are welcome!
 Fork the repo → create a branch → open a PR to collaborate.
 
+
+How to run NimbusOps locally
+
+From NimbusOps/:
+```
+# 1. Create venv & install deps
+python -m venv .venv
+. .venv/bin/activate   # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+
+# 2. Train a model
+python src/train.py
+
+# 3. Start prediction API
+uvicorn src.predict:app --reload
+
+
+```
+Then:
+
+curl -X POST "http://127.0.0.1:8000/predict" \
+  -H "Content-Type: application/json" \
+  -d "{\"features\": [[14.0, 20.0, 90.0, 600.0, 0.1, 0.2, 0.3, 0.1, 0.2, 0.05, 0.2, 0.8, 1.5, 15.0, 0.006, 0.02, 0.03, 0
+
