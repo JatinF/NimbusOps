@@ -31,7 +31,7 @@ It integrates infrastructure-as-code, experiment tracking, and monitoring into a
 
 ###  Project Structure
 NimbusOps/
-├── infrastructure/
+```├── infrastructure/
 │ ├── main.tf
 │ ├── variables.tf
 │ └── outputs.tf
@@ -47,25 +47,23 @@ NimbusOps/
 ├── README.md
 └── requirements.txt
 
-
+```
 ### 🧠 Example Workflow
 
 1. **Provision Cloud Infrastructure**
-```bash
+```
 cd infrastructure
 terraform init
 terraform apply
+
 Train and Log a Model
-
-bash
-Copy code
 python src/train.py
-Containerize and Deploy
 
-bash
-Copy code
+Containerize and Deploy
 docker build -t nimbusops-model .
 docker run -p 8080:8080 nimbusops-model
+
+```
 Monitor Performance
 Access Grafana dashboards for accuracy, latency, and uptime metrics.
 
@@ -77,6 +75,8 @@ Access Grafana dashboards for accuracy, latency, and uptime metrics.
 | Uptime             | Terraform-provisioned endpoint availability | 99.9 %  |
 
 
+
+```
 📦 Requirements
 nginx
 Copy code
@@ -84,7 +84,7 @@ mlflow
 boto3
 scikit-learn
 pandas
-prometheus-client
+prometheus-client 
 
 🤝 Contributing
 Contributions and extensions (e.g., GCP modules, CI/CD workflows) are welcome!
